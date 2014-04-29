@@ -1,9 +1,8 @@
 describe("Board", function() {
 
-  var capitalize = function(word) {
+  var capitalize = function(word){
     return word[0].toUpperCase() + word.slice(1);
   };
-
 
   var verifyConflictTypes = function(expectedConflicts, matrix){
     // The Board() constructor will accept a matrix and build that into a (Backbone) Board object (as defined in Board.js)
@@ -48,19 +47,19 @@ describe("Board", function() {
 
   describe("Board with major diagonal conflicts", function() {
     verifyConflictTypes(['majorDiagonal', 'queens'], [
-      [0, 1, 0, 0],
-      [0, 0, 1, 0],
       [0, 0, 0, 0],
-      [0, 0, 0, 0]
+      [0, 0, 0, 0],
+      [0, 1, 0, 0],
+      [0, 0, 1, 0]
     ]);
   });
 
   describe("Board with minor diagonal conflicts", function() {
     verifyConflictTypes(['minorDiagonal', 'queens'], [
-      [0, 0, 1, 0],
       [0, 0, 0, 0],
-      [1, 0, 0, 0],
-      [0, 0, 0, 0]
+      [0, 0, 0, 0],
+      [0, 0, 1, 0],
+      [0, 1, 0, 0]
     ]);
   });
 });
